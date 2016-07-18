@@ -1,0 +1,34 @@
+<div class="app-content">
+    <div class="app-actions">
+        <div class="app-search">
+            <input type="text" placeholder="Szukaj filmów..." ng-model="vm.search.title">
+        </div>
+
+        <span class="btn-rounded active add" >
+            <i class="fa fa-plus"></i>
+        </span>
+
+        <ul class="app-sort">
+            <li ng-class="{active: vm.orderBy}"
+                ng-click="vm.sort(true)">Rosnąco</li>
+            <li ng-class="{active: !vm.orderBy}"
+                ng-click="vm.sort(false)">Malejąco</li>
+        </ul>
+    </div>
+
+    <ul class="app-items-list">
+        <li ng-repeat="item in vm.items | filter:vm.search | orderBy:'title':vm.orderBy | limitTo:vm.maxListSize:vm.listStart">
+            <span class="title">{{item[vm.nameKey]}}</span>
+            <a ui-sref="{{vm.view}}({id: item._id.$oid})" class="btn-rounded details">
+                <i class="fa fa-search"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="app-items-pagination">
+        <a href="#"
+           ng-repeat="i in vm.getNumber(vm.maxListSize) track by $index"
+           ng-class="{active: $index === vm.currentPage}"
+           ng-click="vm.setCurrentPage($index)">{{$index + 1}}</a>
+    </div>
+</div>

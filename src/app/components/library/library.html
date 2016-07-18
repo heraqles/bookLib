@@ -1,0 +1,18 @@
+<div class="app-main-tabs active" id="video-tabs">
+    <a ui-sref="app.library.books" ui-sref-active="active">
+        <i class="fa fa-book"></i>
+        Książki
+    </a>
+    <a ui-sref="app.library.authors" ui-sref-active="active">
+        <i class="fa fa-users"></i>
+        Autorzy
+    </a>
+    <a ui-sref="app.library.categories" ui-sref-active="active">
+        <i class="fa fa-list-ol"></i>
+        Kategorie
+    </a>
+</div>
+
+<div class="app-content-wrapper">
+    <div ui-view="content"></div>
+</div>

@@ -1,0 +1,16 @@
+<div class="app-content">
+    <h3 class="app-heading"><i class="fa fa-info"></i> Szczegóły książki</h3>
+
+    <div class="app-item-info">
+        <p><span>Tytuł:</span> {{vm.book.title}}</p>
+        <p><span>Data wydania:</span> {{vm.book.date}}</p>
+        <p><span>Kategorie:</span> {{vm.book.categories[0]}}</p>
+        <p><span>Aktorzy:</span> {{vm.book.author[0]}}</p>
+        <p><span>Opis:</span> <i>{{vm.book.description}}</i></p>
+        <p><span>Ilość płyt:</span> {{vm.book.quantity}}</p>
+
+        <button type="button" class="btn edit">Edytuj</button>
+    </div>
+</div>
+
+<sidebar-component></sidebar-component>
